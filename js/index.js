@@ -1,9 +1,12 @@
-// import html2canvas from 'html2canvas';
-// import html2canvas from "../node_modules/html2canvas";
+const title = document.getElementById("title")
+const author = document.getElementById("author")
+const lyrics = document.getElementById("lyrics")
+const card = document.getElementById("card")
+const cover = document.getElementById("song-cover")
 const BLACK_LOGO = "images\\black_logo.png"
 const WHITE_LOGO = "images\\white_logo.png"
-let logo_color = BLACK_LOGO
 
+let logo_color = BLACK_LOGO
 window.devicePixelRatio = 3
 
 const load_image = (event) => {
@@ -12,8 +15,10 @@ const load_image = (event) => {
     image.hidden = false
 };
 
+cover.addEventListener("click", (e) => { document.getElementById("choose-file").click() })
+
 document.getElementById("download-image").addEventListener("click", () => {
-    html2canvas(document.querySelector("#card"), { backgroundColor: null },  { scale: window.devicePixelRatio }).then(canvas => {
+    html2canvas(card, { backgroundColor: null },  { scale: window.devicePixelRatio }).then(canvas => {
         canvas.toBlob(function (blob) {
             window.saveAs(blob);
         });
@@ -21,13 +26,13 @@ document.getElementById("download-image").addEventListener("click", () => {
 });
 
 document.getElementById("card-color").addEventListener("input", (e) => {
-    document.getElementById("card").style.backgroundColor = e.target.value;
+    card.style.backgroundColor = e.target.value;
 })
 
 document.getElementById("text-color").addEventListener("input", (e) => {
-    document.getElementById("title").style.color = e.target.value;
-    document.getElementById("author").style.color = e.target.value;
-    document.getElementById("lyrics").style.color = e.target.value;
+    title.style.color = e.target.value;
+    title.style.color = e.target.value;
+    lyrics.style.color = e.target.value;
 })
 
 document.getElementById("logo-color").addEventListener("click", (e) => {
@@ -38,11 +43,6 @@ document.getElementById("logo-color").addEventListener("click", (e) => {
 document.getElementById("quality").addEventListener("input", (e) => {
     window.devicePixelRatio = e.target.value
 })
-
-
-const title = document.getElementById("title")
-const author = document.getElementById("author")
-const lyrics = document.getElementById("lyrics")
 
 const addEvent = (object) => object.addEventListener("paste", (e) => {
     e.preventDefault();
