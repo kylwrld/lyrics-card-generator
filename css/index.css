@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+    font-family: "Similar";
+    font-weight: normal;
+    src: url('../fonts/Similar-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Similar";
+    font-weight: 100;
+    src: url('../fonts/Similar-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Similar";
+    font-weight: 200;
+    src: url('../fonts/Similar-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Similar";
+    font-weight: 300;
+    src: url('../fonts/Similar-Bold.ttf') format('truetype');
+}
+
+:root {
+    --font: Similar;
+    --title-weight: 300;
+    --author-weight: 200;
+    --lyrics-weight: 300;
+}
+
+html, body {
+    margin: 0px;
+    height: 100%;
+    font-family: var(--font);
+    font-weight: normal;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.h1-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 5em;
+    color: black;
+    margin: 0px;
+    margin-bottom: 25px;
+}
+
+.card {
+    position: relative;
+    background-color: #8aa8b1;
+    flex-direction: column;
+    display: flex;
+    padding: 45px;
+}
+
+#card {
+    width: fit-content;
+    max-width: 500px;
+    height: fit-content;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#song-cover {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 7px;
+    /* overflow-clip-margin: content-box;
+    overflow: clip; */
+}
+
+
+#title-author {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    max-width: 400px;
+}
+
+#title {
+    font-family: var(--font);
+    font-weight: var(--title-weight);
+    max-width: 400px;
+    font-size: 1.5em;
+    outline: transparent solid 0px;
+
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    margin-bottom: 0rem;
+    margin-top: 0px;
+    line-height: 1.3;
+}
+
+#author {
+    font-size: 15px;
+    /* width: 660px; */
+    outline: transparent solid 0px;
+    margin-bottom: 0rem;
+    margin-top: 0px;
+    line-height: 1.3;
+    font-family: var(--font);
+    font-weight: var(--author-weight);
+}
+
+#lyrics {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 65px;
+    margin-bottom: 65px;
+    font-size: 2.5em;
+    font-weight: var(--lyrics-weight);
+    text-decoration: none;
+}
+
+#logo {
+    /* max-width: min-content; */
+    width: 133px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.config > p {
+    color: black;
+}
+
+.input {
+    color: white;
+    background-color: rgb(87, 87, 87);
+    box-shadow: 4px 4px 17px 0px #bebebe;
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

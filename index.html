@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <title>Lyrics card generator</title>
+</head>
+<body>
+    <div class="main">
+        <p class="h1-title">Lyrics card</p>
+        <div class="card" id="card">
+            <div class="content">
+                <div class="info">
+                    <img src="images/placeholder.svg" id="song-cover">
+                    <div id="title-author">
+                        <h1 id="title" contenteditable="true" spellcheck="false">Despair in the Departure Lounge</h1>
+                        <h3 id="author" contenteditable="true" spellcheck="false">Arctic Monkeys</h3>
+                    </div>
+                </div>
+                <h2 id="lyrics" contenteditable="true" spellcheck="false"></h2>
+                <img src="images/black_logo.png" id="logo">
+            </div>
+        </div>
+
+        <div class="settings" style="margin: 20px;">
+            <input type="file" accept="image/*" name="image" onchange="load_image(event)">
+            <button class="input" type="button" id="download-image">Download</button>
+            <div class="colors" style="display: flex; gap: 50px;">
+                <div class="config">
+                    <p>Card color</p>
+                    <input type="color" id="card-color">
+                </div>
+                <div class="config">
+                    <p>Text color</p>
+                    <input type="color" id="text-color">
+                </div>
+                <div class="config">
+                    <p>Logo color</p>
+                    <button class="input" type="button" id="logo-color">Toggle</button>
+                </div>
+                <div class="config">
+                    <p>Quality (default: 3)</p>
+                    <input type="range" min="1" max="10" step="1" value="3" id="quality">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/index.js"></script>
+</html>
