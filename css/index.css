@@ -45,8 +45,10 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
+
+    flex: 1;
+    /* overflow-y: auto; */
+    gap: 10px;
 }
 
 .h1-title {
@@ -61,33 +63,41 @@ html, body {
 .card {
     position: relative;
     background-color: #518fa1;
-    flex-direction: column;
     display: flex;
-    padding: 45px;
+    flex-direction: column;
+    align-content: space-between;
+    /* padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    padding-right: 35px; */
+    padding: 29px;
 }
 
 #card {
     width: fit-content;
-    max-width: 500px;
+    max-width: 450px;
     height: fit-content;
 }
 
 .content {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .info {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
 }
 
 #song-cover {
-    width: 50px;
-    height: 50px;
+    /* width: 50%; */
+    /* height: 10%; */
     object-fit: cover;
     border-radius: 7px;
+    max-width: 70px;
+    max-height: 70px;
     /* overflow-clip-margin: content-box;
     overflow: clip; */
 }
@@ -96,20 +106,24 @@ html, body {
 #title-author {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-left: 20px;
-    max-width: 400px;
+    /* flex: 1;
+    flex-grow: 2; */
+    /* max-width: 500px; */
 }
 
 #title {
     font-family: var(--font);
     font-weight: var(--title-weight);
-    max-width: 400px;
-    font-size: 1.5em;
+    max-width: 460px;
+    /* max-width: 340px; */
+    font-size: 1.7em;
     outline: transparent solid 0px;
 
-    text-overflow:ellipsis;
+    /* text-overflow:ellipsis;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: hidden; */
 
     margin-bottom: 0rem;
     margin-top: 0px;
@@ -117,7 +131,8 @@ html, body {
 }
 
 #author {
-    font-size: 15px;
+    font-size: 1.3em;
+    /* color: #3d3d3d; */
     /* width: 660px; */
     outline: transparent solid 0px;
     margin-bottom: 0rem;
@@ -130,12 +145,15 @@ html, body {
 #lyrics {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 30px;
     margin-top: 65px;
     margin-bottom: 65px;
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: var(--lyrics-weight);
     text-decoration: none;
+    line-height: 45px;
+    outline-style: none;
+    max-width: 475px;
 }
 
 #logo {
